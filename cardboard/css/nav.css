@@ -1,0 +1,42 @@
+.navbar {
+position: relative;
+width: 100%;
+min-width: 360px;
+background-color: <?= $primary ?>;
+color: <?= $on_primary ?>;
+height: 56px;
+<?= $z[4] ?>;
+}
+
+.navbar > .title {
+position: absolute;
+display: inline-block;
+bottom: 0.75rem;
+left: 1rem;
+margin:0;
+font-size: 1.25rem;
+font-weight: normal;
+}
+
+/*
+.navbar > .ruler {
+position: absolute;
+display: inline-block;
+bottom: 8px;
+left: 72px;
+margin:0;
+font-size: 20px;
+font-weight: normal;
+}
+*/
+/*
+.string-line {
+      display: block;
+      width: 360px;
+      height: 1px;
+      background-color: lightblue;
+      position: absolute;
+      bottom: 0.9375rem;
+      left: 0;
+    }
+*/

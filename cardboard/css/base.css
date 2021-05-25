@@ -1,0 +1,36 @@
+/***file: base.css ***/
+
+/*Base values for html tags*/
+/* keep this file really skinny - remove when overrides are detected*/
+
+@media all {
+.page-break { display: none; }
+}
+
+@media print {
+.page-break { display: block; page-break-before: always; }
+}
+
+html {
+    font-size: calc(0.875rem + ((1vh - 4.8px) * 1.25) );
+    line-height: 1.15;
+    }
+
+body {
+    margin: 0;
+    background-color: <?= $background ?>;
+    font-family: <?= $font_family ?>;
+    color: <?= $on_surface ?>;
+    }
+
+h1 {
+      font-weight: lighter;
+      font-stretch: condensed;
+      letter-spacing: -.05em;
+    }
+
+
+/*** state_css ***/
+.is-hidden {
+  visibility: hidden; opacity: 0;
+  }

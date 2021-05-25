@@ -1,0 +1,53 @@
+.modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      border-radius: <?= $medium_radius ?>;
+      text-align: center;
+      box-sizing: border-box;
+      padding:4px;
+      z-index: 5;
+      width: 280px;
+      min-height: 280px;
+      transform: translate(-50%, -50%) scale(0.8, 0.8);
+      background-color: <?= $surface ?>;
+      color: rgba(0,0,0, 0.87);
+      <?= $z[24] ?>;
+      }
+
+
+/* fades in modal, triggered by target - default .is-hidden [visibility:0 opacity:0], scale 0.8  */
+
+:target.modal {
+          visibility: visible;
+          opacity:1;
+          transform: translate(-50%, -50%) scale(1, 1) translateZ(0);
+          transition: opacity 45ms linear, transform 150ms ease-in;
+        }
+
+/*delay visibility and scale on fadeout, so just opacity is seen to change*/
+:not(:target).modal {
+      transition: visibility 0s linear 75ms, transform 0s linear 75ms, opacity 75ms linear;
+      }
+
+.scrim{
+      top:0;
+      left:0;
+      position: fixed;
+      width:100%;
+      height:100%;
+      background-color: black;
+      }
+
+
+/* scrim fades in - initiated by target */
+:target.modal ~ a .scrim {
+  visibility: visible;
+  opacity:0.6;
+  transition: opacity 150ms linear;
+}
+
+/* scrim - end target */
+:not(:target).modal ~ a .scrim {
+  transition: visibility 0s linear 75ms, opacity 75ms linear;
+}
