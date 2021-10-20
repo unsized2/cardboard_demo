@@ -1,6 +1,10 @@
 /*** layout.css ***/
+
+[class*="l-"] {
+    position: absolute;
+    }
+
 .l-tr-4{
-    position: absolute; 
     top: 4px;
     right: 4px;
     }
@@ -9,3 +13,14 @@
     top: 4px;
     left: 4px;
     }
+
+.l-br {
+        bottom: 0.6rem;
+        right: 0.6rem;
+        }
+
+.l-br-float
+{
+  bottom: -0.5rem;
+  right:  -0.5rem;
+}

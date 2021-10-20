@@ -1,0 +1,153 @@
+/* carousel_css */
+/* css selectors directly matches html. Inflexible, yet efficient, prevents clashes */
+
+/* require ability to vary sizes and border radius*/
+
+.carousel {
+  position:relative;
+  height: 194px;
+}
+
+.carousel > .figure {
+  position: absolute;
+  top:0;
+  left:0;
+  margin: 0;
+  width:344px;
+  height: 194px;
+  line-height: 194px;
+
+/* background-color: {$grey.600}; */
+  overflow: hidden;
+  /*used for lw res base64 image */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.carousel img {
+  width: 100%;
+  height:auto;
+  vertical-align: middle;
+  position: relative;
+  margin: -50% auto;
+  opacity: 1;
+}
+
+.carousel img.portrait {
+  width: auto;
+  height:100%;
+  margin: auto -50%;
+}
+
+.carousel .caption {
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  line-height: 1.25rem;
+  text-align: center;
+  background-color: #00000066;
+  width: 100%;
+}
+
+.carousel > input {
+  visibility:hidden;
+  opacity:0;
+}
+
+.carousel > input:checked + .figure {
+  opacity:1;
+  visibility: visible;
+}
+
+.carousel .next,
+.carousel .prev {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 25%;
+  top:0;
+}
+
+.carousel .next {
+  background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.2)); /* Standard syntax (must be last) */
+  right: 0px;
+}
+
+.carousel .prev{
+  background-image: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.2));
+  left:0;
+}
+
+.carousel .prev.arrow:hover{
+  background-image: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,.7));
+}
+
+.carousel .next.arrow:hover {
+  background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.7));
+}
+
+.carousel .indicator {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin:0;
+  padding:0;
+  text-align: center;
+  line-height: 30px;
+  background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.15));
+}
+
+.carousel .indicator > li {
+  height: 10px;
+  width:  10px;
+  border-radius: 100%;
+  display: inline-block;
+  opacity: 0.3;
+  margin: 0 5px 0 5px;
+  background-color: white;
+  list-style-type: none;
+}
+
+.carousel .indicator > li.selected {
+  opacity: 1;
+}
+
+/* css arrow icons - note could be made generic and called as a icon / module */
+.arrow:after {
+  height: 20px;
+  width: 20px;
+  margin-top: -10px;
+  top: 50%;
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  border-width: 5px 5px 0 0;
+  border-style: solid;
+  border-color: #fafafa;
+  opacity: 0.5;
+  outline: 0;
+  z-index: 3;
+  background: transparent;
+  content: "";
+}
+.prev.arrow:after {
+  left: 15px;
+  transform: rotate(-135deg);
+}
+
+.next.arrow:after {
+  right: 15px;
+  transform: rotate(45deg);
+}
+
+.arrow:hover:after {
+  opacity: 0.6;
+}
+
+.arrow:active:after {
+  opacity: 1;
+}
+
+/*  End Carousel css */

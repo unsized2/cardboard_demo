@@ -1,0 +1,80 @@
+/* icon-chevron.css */
+
+/** css icons - less space than svg - **/
+
+[class*="icss-"] {
+  position: relative;
+  display:inline-block;
+  font-style: normal;
+  background-color:currentColor;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+[class*="icss-"]:before,
+[class*="icss-"]:after {
+  content: "";
+  border-width: 0;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.icss-chevron {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: transparent;
+  margin: 0;
+}
+
+.icss-blank {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0;
+}
+
+
+.icss-chevron.small {
+  width: .875rem;
+  height: .875rem;
+  background-color: transparent;
+  margin: 0;
+}
+
+
+.icss-chevron::before  {
+  content:'';
+    height: 0.5rem;
+    width: 0.5rem;
+    border: .125em solid currentColor;
+    border-color: <?= $on_surface ?> <?= $on_surface ?> transparent transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-70%) rotate(135deg);
+}
+
+.icss-chevron.up,
+.icss-chevron.is-up {
+    transform: rotate(180deg);
+}
+
+.icss-chevron {
+
+}
+
+
+/* expand collapse */
+/* toggle trick - two identical buttons one above the other */
+/* after triggering on button, the on one gets hidden, and the off one transtitions into the off position */
+/* .5s delay on visibility of off button to prevent false triggering */
+
+/* spin this off as a state / transtition css file */
+.icss-chevron.is-up,
+.icss-chevron.is-down {
+  /*put transition here */
+  transition: transform 0.5s;
+}
+
+:target .icss-chevron.is-up,
+:target .icss-chevron.is-down {
+  transform: rotate(180deg);
+}

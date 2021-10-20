@@ -79,7 +79,7 @@ span.buttonText {
   .ripple{
   overflow:hidden;
   position:relative;
-  transform:translate3d(0,0,0)*/
+  transform:translate3d(0,0,0)
   }
 
   .ripple:after{
@@ -95,11 +95,11 @@ span.buttonText {
   background-position:50%;
   transform:scale(0,0);
   opacity:0;
-  transition:transform .5s ease-in, opacity .2s
+  transition:transform .35s ease-out, opacity .2s
   }
 
   .ripple:active:after{
   transform:scale(10,10);
   opacity:.5;
-  transition:0.25s ease-out;
+  transition:0.35s ease-out;
   }

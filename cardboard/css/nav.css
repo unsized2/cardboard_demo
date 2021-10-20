@@ -1,11 +1,14 @@
 .navbar {
-position: relative;
+/* position: relative; */
+position: sticky;
+top:-48px;
 width: 100%;
 min-width: 360px;
 background-color: <?= $primary ?>;
 color: <?= $on_primary ?>;
 height: 56px;
 <?= $z[4] ?>;
+z-index:4;
 }
 
 .navbar > .title {

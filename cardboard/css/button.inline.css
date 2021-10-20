@@ -1,0 +1,81 @@
+/***** button inlines ******
+Example html using a pure css icon
+
+<a href='#' class='icon button round' ><i class='icss-chevron'></i></a>
+
+**********************/
+
+.button.inline {
+  border: 0.125rem solid transparent;
+  display:inline-block;
+  position:relative;
+  line-height:0;
+
+}
+
+:target>.is-on .button.inline,
+a.button.inline:focus {
+  border: 0.125rem solid <?= $secondary ?>;
+}
+
+a.button.inline:hover {
+  background:  <?= $surface_hover ?>;
+  border: 0.125rem solid <?= $surface_focus ?>;
+
+}
+
+a.button.inline:active {
+  border: 0.125rem solid <?= $surface_focus ?>;
+  background: <?= $surface ?>;
+}
+
+/* transparent click area to 2rem */
+.button.inline::before {
+  content:'';
+  position: absolute;
+  top: -1rem;
+  bottom: -1rem;
+  left: -1rem;
+  right:-1rem;
+  background: transparent;
+  z-index: 1;
+  opacity: 0.5;
+  cursor:default;
+}
+
+.button.inline.round {
+  border-radius: 100%;
+}
+
+/* Reset - remove dotted outline   */
+a.button.inline:focus {
+  outline:0;
+  text-decoration: none;
+}
+
+/* button states and transition  */
+/* toggle - 1/2 sec delay to prevent hysteris */
+/* appliest to toggles that use anchor :target - eg more / less toggle. */
+
+.is-on,
+.is-off{
+  position: absolute; /** buttons placed on top of each other **/
+}
+
+.is-on {
+    visibility: visible;
+    transition: visibility 0s .5s;
+}
+
+:target .is-on {
+  visibility: hidden;
+}
+
+.is-off {
+  visibility: hidden;
+  transition: visibility 0s .5s;
+}
+
+:target .is-off {
+  visibility: visible;
+}

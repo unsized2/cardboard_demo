@@ -29,12 +29,12 @@ $t['primary_active']       = $black_alpha[16];
 $t['primary_checked']      = $black_alpha[4];
 
 $t['secondary']            = $purple[100];
-$t['background']           = $yellow[50];
+$t['background']           = $purple[50];
 $t['valid']                = $green[900];
 $t['error']                = $red[900];
 
 /***surface is the cardboard****/
-$t['surface']              = $grey[50];
+$t['surface']              = $green[900];
 $t['surface_hover']        = $black_alpha[4];
 $t['surface_focus']        = $black_alpha[12];
 $t['surface_hover_focus']  = $black_alpha[16];
